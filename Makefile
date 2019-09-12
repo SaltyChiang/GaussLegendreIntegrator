@@ -1,5 +1,5 @@
-CXX = clang++
-CXXFLAGS = -std=c++11 -fopenmp -O3
+CXX = g++
+CXXFLAGS = -std=c++11 -fopenmp -O3 -lm -lfftw3
 
 TARGET = bin/sample
 MAIN = sample.cpp
