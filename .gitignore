@@ -3,7 +3,9 @@
 *.sln
 *.vcxproj
 *.user
+*.filters
 Release
 x64
 x86
 bin
+obj
