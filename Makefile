@@ -1,5 +1,6 @@
-CXX = g++
-CXXFLAGS = -std=c++11 -fopenmp -O3 -lm -lfftw3
+CXX = clang++
+CXX_FLAGS = -std=c++11 -fopenmp -O3
+CXX_LINK_FLAGS = -lm -lfftw3
 
 TARGET = bin/sample
 MAIN = sample.cpp
@@ -10,10 +11,10 @@ INC = $(wildcard include/*.hpp)
 INCLUDE_DIR = include
 
 obj/%.o : src/%.cpp include/%.hpp
-	$(CXX) $(CXXFLAGS) -I$(INCLUDE_DIR) -c -o $@ $<
+	$(CXX) $(CXX_FLAGS) -I$(INCLUDE_DIR) -c -o $@ $<
 
 $(TARGET) : $(MAIN) $(OBJ)
-	$(CXX) $(CXXFLAGS) -I$(INCLUDE_DIR) -o $@ $^
+	$(CXX) $(CXX_FLAGS) $(CXX_LINK_FLAGS) -I$(INCLUDE_DIR) -o $@ $^
 
 all : $(TARGET)
 

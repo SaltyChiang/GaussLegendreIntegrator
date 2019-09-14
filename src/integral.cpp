@@ -1,6 +1,5 @@
 #include <cmath>
 #include "integral.hpp"
-#include "convolution.hpp"
 
 GaussLegendreIntegrator::GaussLegendreIntegrator(int sampleNum)
 {
@@ -41,12 +40,14 @@ void GaussLegendreIntegrator::CalcGaussLegendreSamplingPoints()
 	double z, pp, p1, p2, p3;
 
 	// Loop over the desired roots
-	for (unsigned int i = 0; i < m; i++) {
+	for (unsigned int i = 0; i < m; i++)
+	{
 		z = std::cos(3.14159265358979323846 * (i + 0.75) / (sampleNum + 0.5));
 
 		// Starting with the above approximation to the i-th root, we enter
 		// the main loop of refinement by Newton's method
-		do {
+		do
+		{
 			p1 = 1.0;
 			p2 = 0.0;
 

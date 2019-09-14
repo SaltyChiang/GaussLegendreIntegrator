@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INTEGRAL_HPP_
+#define INTEGRAL_HPP_
 
 class GaussLegendreIntegrator
 {
@@ -13,3 +14,5 @@ public :
 	GaussLegendreIntegrator(int sampleNum);
 	double DoIntegral(double a, double b, double function(double));
 };
+
+#endif
